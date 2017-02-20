@@ -43,4 +43,8 @@
 <Button android:id="@+id/dateButton"
  android:layout_width="wrap_content"
     android:layout_height="50dp"/>
+
+  <Button android:id="@+id/saveButton"
+ android:layout_width="match_parent"
+    android:layout_height="50dp"/>
 </LinearLayout>

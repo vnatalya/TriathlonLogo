@@ -17,10 +17,12 @@ namespace App2
         public string couldntSave;
         protected string incorrectDistance;
         protected string incorrectTime;
+        protected string incorrectType;
 
         public string TrainingSaved { get { return trainingSaved; } }
         public string CouldntSave { get { return couldntSave; } }
         public string IncorrectDistance { get { return incorrectDistance; } }
         public string IncorrectTime { get { return incorrectTime; } }
+        public string IncorrectType { get { return incorrectType; } }
     }
 }

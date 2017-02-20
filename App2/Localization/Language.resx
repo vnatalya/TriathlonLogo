@@ -210,4 +210,7 @@
   <data name="TrainingSaved" xml:space="preserve">
     <value>Training was succfully saved</value>
   </data>
+  <data name="IncorrectType" xml:space="preserve">
+    <value>Type of training not acceptable</value>
+  </data>
 </root>

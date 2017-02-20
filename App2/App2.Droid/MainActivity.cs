@@ -14,13 +14,13 @@ namespace App2.Droid
 	public class MainActivity : FragmentActivity
     {
         Button filterButton;
-
+        ActionBar actionBar;
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 			SetContentView (Resource.Layout.Main);
 
-            filterButton = FindViewById<Button>(Resource.Id.filterButton);			
+            filterButton = FindViewById<Button>(Resource.Id.filterButton);
 		}
 
         protected override void OnResume()
@@ -29,8 +29,8 @@ namespace App2.Droid
 
             filterButton.Click += FilterButton_Click;
 
-            Android.Support.V4.App.FragmentTransaction fragmentTx = this.SupportFragmentManager.BeginTransaction();
-            Android.Support.V4.App.Fragment fragment = new ChartFragment();
+            global::Android.Support.V4.App.FragmentTransaction fragmentTx = this.SupportFragmentManager.BeginTransaction();
+            global::Android.Support.V4.App.Fragment fragment = new ChartFragment();
             
             fragmentTx.Replace(Resource.Id.contentFrame, fragment);
             fragmentTx.Commit();
@@ -38,7 +38,9 @@ namespace App2.Droid
 
         private void FilterButton_Click(object sender, EventArgs e)
         {
-            
+            TriathlonViewModel.Instance.SetCurrentItem();
+            var intent = new Intent(this, typeof(EnterActivity));
+            StartActivity(intent);
         }
     }
 }

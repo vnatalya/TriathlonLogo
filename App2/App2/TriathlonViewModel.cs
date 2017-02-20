@@ -26,6 +26,8 @@ namespace App2
             }
         }
 
+        public static StringService StringService;
+
         private TriathlonTraining currentItem;
         public TriathlonTraining CurrentItem {
             get { return currentItem; }
@@ -42,12 +44,37 @@ namespace App2
             }
         }
 
-        public void SaveCurrentItem() {
-            Result result;
+        public Result SaveCurrentItem()
+        {
+            Result result = new Result(true, StringService.TrainingSaved, string.Empty);
+
             if (currentItem.Type == TriathlonType.Triathlon || currentItem.Type == TriathlonType.Swimming || currentItem.Type == TriathlonType.Running || currentItem.Type == TriathlonType.Cycling)
             {
-
+                result.Status = false;
+                result.Title = StringService.CouldntSave;
+                result.ErrorMessage = StringService.IncorrectType;
+                return result;
             }
-                    }
+
+            if (currentItem.Distance == 0 && currentItem.Type != TriathlonType.Trainer)
+            {
+                result.Status = false;
+                result.Title = StringService.CouldntSave;
+                result.ErrorMessage = StringService.IncorrectDistance;
+                return result;
+            }
+
+            if (currentItem.Time == TimeSpan.Zero)
+            {
+                result.Status = false;
+                result.Title = StringService.CouldntSave;
+                result.ErrorMessage = StringService.IncorrectTime;
+                return result;
+            }
+
+            DataBaseService.Instance.SaveTrinathlonTraining(currentItem);
+
+            return result;
+        }
     }   
 }
