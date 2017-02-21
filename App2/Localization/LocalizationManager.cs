@@ -79,8 +79,24 @@ namespace App2.iOS
     public override void Init()
     {
 
-        // inc  = Translate("LogIn");               
-    }
+            // inc  = Translate("LogIn");  
+            trainingSaved = Translate("TrainingSaved");
+            couldntSave = Translate("CouldntSave");
+            incorrectDistance = Translate("IncorrectDistance");
+            incorrectTime = Translate("IncorrectTime");
+            swimming = Translate("Swimming");
+            backstroke = Translate("Backstroke");
+            breaststroke = Translate("Breaststroke");
+            butterfly = Translate("Butterfly");
+            swimmingExercices = Translate("SwimmingExercices");
+            running = Translate("Running");
+            runningExercises = Translate("RunningExercises");
+            cycling = Translate("Cycling");
+            bike = Translate("Bike");
+            trainer = Translate("Trainer");
+            triathlon = Translate("Triathlon");
+            freestyle = Translate("Freestyle");
+        }
 }
     
 }

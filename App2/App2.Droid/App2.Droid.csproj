@@ -102,15 +102,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChartFragment.cs" />
+    <Compile Include="Adapters\ExpandableListAdapter.cs" />
+    <Compile Include="Controls\TriathlonTypesPopup.cs" />
+    <Compile Include="Views\ChartFragment.cs" />
     <Compile Include="DBService.cs" />
-    <Compile Include="EnterActivity.cs" />
-    <Compile Include="MainActivity.cs" />
+    <Compile Include="Views\EnterActivity.cs" />
+    <Compile Include="Views\MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
-    <Compile Include="TimePickerWithSeconds.cs" />
+    <Compile Include="Controls\TimePickerWithSeconds.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -124,6 +126,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\TimePickerWithSecondsLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SimplestRow.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\TriathlonTypePopupLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

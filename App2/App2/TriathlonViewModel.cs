@@ -29,8 +29,46 @@ namespace App2
         public static StringService StringService;
 
         private TriathlonTraining currentItem;
-        public TriathlonTraining CurrentItem {
+        public TriathlonTraining CurrentItem
+        {
             get { return currentItem; }
+        }
+
+        public List<string> HeadersList;
+        public Dictionary<string, List<string>> ChildrenList;
+
+        public void Initialize()
+        {
+            SetTriathlonTypesLists();
+        }
+
+        void SetTriathlonTypesLists()
+        {
+            HeadersList.Add(StringService.Triathlon);
+            HeadersList.Add(StringService.Swimming);
+            HeadersList.Add(StringService.Running);
+            HeadersList.Add(StringService.Cycling);
+
+            var swimmingListView = new List<string>();
+            swimmingListView.Add(StringService.Butterfly);
+            swimmingListView.Add(StringService.Freestyle);
+            swimmingListView.Add(StringService.Breaststroke);
+            swimmingListView.Add(StringService.Backstroke);
+            swimmingListView.Add(StringService.SwimmingExercices);
+
+            ChildrenList.Add(StringService.Swimming, swimmingListView);
+
+            var runningListView = new List<string>();
+            swimmingListView.Add(StringService.Run);
+            swimmingListView.Add(StringService.RunningExercises);
+
+            ChildrenList.Add(StringService.Running, runningListView);
+
+            var cyclingListView = new List<string>();
+            swimmingListView.Add(StringService.Bike);
+            swimmingListView.Add(StringService.Trainer);
+
+            ChildrenList.Add(StringService.Cycling, cyclingListView);
         }
 
         public void SetCurrentItem(int id = -1) {

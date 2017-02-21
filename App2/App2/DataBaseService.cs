@@ -36,7 +36,7 @@ namespace App2
 
         public DataBaseService()
         {
-            CreateDB();
+           // CreateDB();
         }
 
         public void CreateDB()

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace App2
 {
-    class TriathlonTraining
+    public class TriathlonTraining
     {
         public enum TriathlonType
         {
